@@ -1,0 +1,11 @@
+server:
+ servlet:
+    context-path: /produdoro/api 
+     
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: ${MONGO_DB_URI:mongodb+srv://aluno2024:artur 2024@cluster0.rwfbm.mongodb.net/Cluster0?retryWrites=true&w=majority&appName=Cluster0}
+      auto-index-creation: true
+  
