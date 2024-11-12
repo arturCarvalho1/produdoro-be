@@ -1,15 +1,19 @@
 package dev.wakandaacademy.produdoro.usuario.domain;
 
-import lombok.AccessLevel;
-import lombok.Builder;
+import dev.wakandaacademy.produdoro.pomodoro.domain.ConfiguracaoPadrao;
 import lombok.Getter;
 
-@Builder(access = AccessLevel.PACKAGE)
 @Getter
 public class ConfiguracaoUsuario {
-	private Integer tempoMinutosFoco;
-	private Integer tempoMinutosPausaCurta;
-	private Integer tempoMinutosPausaLonga;
-	private Integer repeticoesParaPausaLonga;
+	private final Integer tempoMinutosFoco;
+	private final Integer tempoMinutosPausaCurta;
+	private final Integer tempoMinutosPausaLonga;
+	private final Integer repeticoesParaPausaLonga;
 
+	public ConfiguracaoUsuario(ConfiguracaoPadrao configuracaoPadrao) {
+		this.tempoMinutosFoco =  configuracaoPadrao.getTempoMinutosFoco();
+		this.tempoMinutosPausaCurta =  configuracaoPadrao.getTempoMinutosPausaCurta();
+		this.tempoMinutosPausaLonga =  configuracaoPadrao.getTempoMinutosPausaLonga();
+		this.repeticoesParaPausaLonga =  configuracaoPadrao.getRepeticoesParaPausaLonga();
+	}
 }

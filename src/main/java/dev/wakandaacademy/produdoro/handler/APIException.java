@@ -26,7 +26,7 @@ public class APIException extends RuntimeException {
     }
 
     public static APIException build(HttpStatus statusException, String message, Exception e){
-        log.error("Exception: , e");
+        log.error("Exception: ",e);
         return new APIException(statusException, message, e);
     }
 
@@ -44,4 +44,5 @@ public class APIException extends RuntimeException {
                 .status(statusException)
                 .body(bodyException);
     }
+    private static final long serialVersionUID = 1L;
 }
